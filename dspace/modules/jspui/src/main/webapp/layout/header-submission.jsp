@@ -24,7 +24,6 @@
 <%@ page import="javax.servlet.jsp.jstl.core.*" %>
 <%@ page import="javax.servlet.jsp.jstl.fmt.*" %>
 
-
 <%
     String title = (String) request.getAttribute("dspace.layout.title");
     String navbar = (String) request.getAttribute("dspace.layout.navbar");
@@ -46,7 +45,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><%= siteName %>: <%= title %></title>
+        <title><%= title %> | <%= siteName %></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="Generator" content="<%= generator %>" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,9 +91,10 @@
     if (extraHeadDataLast != null)
     { %>
         <%= extraHeadDataLast %>
-    <%
+        <%
     }
     %>
+    
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -119,7 +119,7 @@
     }
     else
     {
-    %>
+%>
         <div class="container">
             <dspace:include page="/layout/navbar-minimal.jsp" />
         </div>
@@ -128,46 +128,24 @@
 %>
 </header>
 
-<main id="content" role="main" style="margin-top: -1.5%; background-color: #eee;">
-<!--<div class="container banner" style="text-align: center;" > -->
-   
-
-    <div class="row" style= "display: block; background-image: url('<%= request.getContextPath() %>/image/banner.jpg') ; background-repeat: no-repeat ; background-size: cover; background-position: center; text-align: center; padding: 2% 2%;>
-
-        <div style="width: 20%; height: 100%">
-                    <div class="box2"> </div>
-                     <div class="box3"> </div>
-            
-
-            <img  src="<%= request.getContextPath() %>/image/logo_rep.png" alt="Repositorio UTM" align="middle" />
-            <!--<div class="col-md-9 brand">
-                <h1><fmt:message key="jsp.layout.header-default.brand.heading" /></h1>
-                <fmt:message key="jsp.layout.header-default.brand.description" /> 
-            </div>
-            <div class="col-md-3">
-            </div>-->
-        </div>
-    </div>
-<!--<br/>-->
-
-<!--
+<main id="content" role="main">
                 <%-- Location bar --%>
+<!-- comentado           
 <%
     if (locbar)
     {
 %>
-<div class="container">  //barra 
-    <dspace:include page="/layout/location-bar.jsp" />
+<div class="container">
+                <dspace:include page="/layout/location-bar.jsp" />
 </div>                
 <%
     }
-%>
--->
+%>-->
+
 
         <%-- Page contents --%>
 <div class="container">
 <% if (request.getAttribute("dspace.layout.sidebar") != null) { %>
     <div class="row">
-    <hr>
     <div class="col-md-9">
-<% } %>	
+<% } %>
