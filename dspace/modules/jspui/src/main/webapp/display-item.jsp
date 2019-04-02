@@ -306,24 +306,16 @@
     </div> <!--col-6-->
     <div class="col-6 col-md-6" style="text-align: right;"><!--add-->
    
-    <!--redes sociales-->
+    <!--redes sociales -->
     
-        <!--<a class="btn fb-share-button" data-href="<%=preferredIdentifier %>" data-layout="button_count" style="padding: 0.5%; padding-left: 1%" ><img src="../../image/facebook.png" alt="facebook"/> <div class="fb-share-button" data-href="<%=preferredIdentifier %>"></div></a>-->
+        <a class="btn fb-share-button" href="javascript:fbshareCurrentPage()" target="_blank" alt="Share on Facebook" style="margin-top: -10px; padding-right: 2px;"><img src="../../image/face.png" height="22em" alt="facebook"/></a>
 
-        <!--<a class="btn " href="#" style="padding: 0.5% 0.3%"><img src="../../image/twitter.png" alt="facebook"/></a>   -->
-
-        <a class="fb-share-button" href="javascript:fbshareCurrentPage()" target="_blank" alt="Share on Facebook"><img src="../../image/facebook.png" alt="facebook"/><a>
-
-        <!--<a class="social-network-icon facebook" href="javascript:fbshareCurrentPage()" target="_blank" alt="Share on Facebook"><img src="../../image/facebook.png" alt="facebook"/></a>-->
-
-
-        <script language="javascript">
+       <script language="javascript">
             function fbshareCurrentPage()
             {window.open("https://www.facebook.com/sharer/sharer.php?u="+escape(window.location.href)+"&t="+document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false; }
         </script>
 
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" target="_blank" data-show-count="false"><img src="../../image/twitter.png" alt="twitter"/></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
-
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false"><img src="../../image/twitter.png" alt="twitter"/></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
 
     </div>
 
