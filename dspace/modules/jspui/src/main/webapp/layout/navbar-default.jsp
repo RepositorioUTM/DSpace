@@ -173,13 +173,13 @@
 
           <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="glyphicon glyphicon-question-sign"></span> Más información <b class="caret"></b></a>
+              <span class="glyphicon glyphicon-question-sign"></span> <fmt:message key="jsp.layout.navbar-default.moreinfo"/><b class="caret"></b></a> <!--mas informacion-->
 
               <ul class="dropdown-menu">
-                <li><a href="#">Información para los depositarios</a></li>
-                <li><a href="#">Manual de uso del RI</a></li>
-                <li><a href="#">Video-tutoriales</a></li>
-                <li><a href="#">Licencia Creative Commons</a></li>
+                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.depositaries"/></a></li> <!--info para los depositarios-->
+                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.manualRI"/></a></li><!--Manual de uso del RI-->
+                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
+                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a></li> <!--Licencia Creative Commons-->
               </ul>
           </li>
 
