@@ -274,7 +274,7 @@
          <required>Campo requerido</required>
        </field>
 
-	<field>
+	 <!--<field>
          <dc-schema>dc</dc-schema>
          <dc-element>rights</dc-element>
          <dc-qualifier>license</dc-qualifier>
@@ -283,7 +283,7 @@
          <input-type value-pairs-name="document_access_lic">dropdown</input-type>
          <hint>Condiciones de la licencia</hint>
          <required>Campo requerido</required>
-       </field>
+       </field>-->
 
        <field>
          <dc-schema>dc</dc-schema>
