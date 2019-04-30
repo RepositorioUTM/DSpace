@@ -43,8 +43,8 @@
          <dc-element>creator</dc-element>
          <repeatable>false</repeatable>
          <label>Autor Principal</label>
-         <input-type>name</input-type>
-         <hint>Se debe ingresar con el formato APELLIDOS;CVU                    NOMBRE</hint>
+         <input-type>onebox</input-type>
+         <hint>Se debe ingresar con el formato NOMBRE APELLIDOS;CVU</hint>
          <required>Campo requerido</required>
        </field>
 
@@ -54,7 +54,7 @@
          <dc-qualifier>adscription</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Área de adscripción</label>
-         <input-type>onebox</input-type>
+         <input-type value-pairs-name="area_adscripcion">dropdown</input-type>
          <hint>Aplica solamente cuando el autor es trabajador de la UTM</hint>
          <required></required>
        </field>
@@ -76,7 +76,7 @@
          <dc-qualifier>studiesP</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Programa de estudios</label>
-         <input-type>onebox</input-type>
+         <input-type value-pairs-name="programa_estudios">dropdown</input-type>
          <hint>Aplica solo en el caso de estudiantes</hint>
          <required></required>
        </field>
@@ -166,11 +166,11 @@
 	<field>
          <dc-schema>dc</dc-schema>
          <dc-element>contributor</dc-element>
-         <dc-qualifier>other</dc-qualifier>
+         <dc-qualifier></dc-qualifier>
          <repeatable>true</repeatable>
          <label>Autoría</label>
-         <input-type>name</input-type>
-         <hint>Otros autores del recurso. En el caso de la tesis el primero que se agregue debe ser el director de tesis y debe tener el formato APELLIDOS;CVU              NOMBRE</hint>
+         <input-type>onebox</input-type>
+         <hint>Otros autores del recurso. En el caso de la tesis el primero que se agregue debe ser el director de tesis y debe tener el formato  NOMBRE APELLIDOS;CVU</hint>
          <required></required>
        </field>
 
@@ -204,7 +204,7 @@
          <label>Cita del recurso</label>
          <input-type>textarea</input-type>
          <hint>Texto libre. Forma correcta de citar el recurso (Formato APA)</hint>
-         <required>campo requerido</required>
+         <required></required>
        </field>
 
         <field>
@@ -274,7 +274,7 @@
          <required>Campo requerido</required>
        </field>
 
-	 <!--<field>
+	 <field>
          <dc-schema>dc</dc-schema>
          <dc-element>rights</dc-element>
          <dc-qualifier>license</dc-qualifier>
@@ -283,7 +283,7 @@
          <input-type value-pairs-name="document_access_lic">dropdown</input-type>
          <hint>Condiciones de la licencia</hint>
          <required>Campo requerido</required>
-       </field>-->
+       </field>
 
        <field>
          <dc-schema>dc</dc-schema>
@@ -387,6 +387,125 @@
 
 <!-- article, masterThesis, doctoralThesis; book, bookPart, review, conferenceObject, lecture, workingPaper, preprint, report, annotation, contributionToPeriodical, patent y other-->
  <form-value-pairs>
+
+   <value-pairs value-pairs-name="area_adscripcion" dc-term="adscription">
+     <pair>
+       <displayed-value>N/A</displayed-value>
+       <stored-value></stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Posgrado</displayed-value>
+       <stored-value>Instituto de Posgrado</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Diseño</displayed-value>
+       <stored-value>Instituto de Diseño</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Ciencias Sociales y Humanidades</displayed-value>
+       <stored-value>Instituto de Ciencias Sociales y Humanidades</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Física y Matemáticas</displayed-value>
+       <stored-value>Instituto de Física y Matemáticas</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Hidrología</displayed-value>
+       <stored-value>Instituto de Hidrología</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Minería</displayed-value>
+       <stored-value>Instituto de Minería</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Electrónica y Mecatrónica</displayed-value>
+       <stored-value>Instituto de Electrónica y Mecatrónica</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Agroindustrias</displayed-value>
+       <stored-value>Instituto de Agroindustrias</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Ingeniería Industrial y Automotríz</displayed-value>
+       <stored-value>Instituto de Ingeniería Industrial y Automotríz</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Centro de Idiomas</displayed-value>
+       <stored-value>Centro de Idiomas</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Laboratorios de Posgrado</displayed-value>
+       <stored-value>Laboratorios de Posgrado</stored-value>
+     </pair>
+   </value-pairs>
+
+   <value-pairs value-pairs-name="programa_estudios" dc-term="studiesP">
+     <pair>
+       <displayed-value>N/A</displayed-value>
+       <stored-value></stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN ADMINISTRACIÓN DE NEGOCIOS</displayed-value>
+       <stored-value>MAESTRÍA EN ADMINISTRACIÓN DE NEGOCIOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN MEDIOS INTERACTIVOS</displayed-value>
+       <stored-value>MAESTRÍA EN MEDIOS INTERACTIVOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN SISTEMAS DISTRIBUIDOS</displayed-value>
+       <stored-value>MAESTRÍA EN SISTEMAS DISTRIBUIDOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN ELECTRÓNICA, OPCIÓN: SISTEMAS INTELIGENTES APLICADOS</displayed-value>
+       <stored-value>MAESTRÍA EN ELECTRÓNICA, OPCIÓN: SISTEMAS INTELIGENTES APLICADOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN TECNOLOGÍAS DE CÓMPUTO APLICADO</displayed-value>
+       <stored-value>MAESTRÍA EN TECNOLOGÍAS DE CÓMPUTO APLICADO</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN TECNOLOGÍA AVANZADA DE MANUFACTURA</displayed-value>
+       <stored-value>MAESTRÍA EN TECNOLOGÍA AVANZADA DE MANUFACTURA</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN CIENCIAS: PRODUCTOS NATURALES Y ALIMENTOS</displayed-value>
+       <stored-value>MAESTRÍA EN CIENCIAS: PRODUCTOS NATURALES Y ALIMENTOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN DISEÑO DE MODAS</displayed-value>
+       <stored-value>MAESTRÍA EN DISEÑO DE MODAS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN DISEÑO DE MUEBLES</displayed-value>
+       <stored-value>MAESTRÍA EN DISEÑO DE MUEBLES</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN MODELACIÓN MATEMÁTICA</displayed-value>
+       <stored-value>MAESTRÍA EN MODELACIÓN MATEMÁTICA</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN ROBÓTICA</displayed-value>
+       <stored-value>MAESTRÍA EN ROBÓTICA</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN CIENCIAS DE MATERIALES</displayed-value>
+       <stored-value>MAESTRÍA EN CIENCIAS DE MATERIALES</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>DOCTORADO EN TECNOLOGÍAS DE CÓMPUTO APLICADO</displayed-value>
+       <stored-value>DOCTORADO EN TECNOLOGÍAS DE CÓMPUTO APLICADO</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>DOCTORADO EN ELECTRÓNICA, ESPECIALIDAD: SISTEMAS INTELIGENTES APLICADOS</displayed-value>
+       <stored-value>DOCTORADO EN ELECTRÓNICA, ESPECIALIDAD: SISTEMAS INTELIGENTES APLICADOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>DOCTORADO EN MODELACIÓN MATEMÁTICA</displayed-value>
+       <stored-value>DOCTORADO EN MODELACIÓN MATEMÁTICA</stored-value>
+     </pair>
+   </value-pairs>
+	
   <value-pairs value-pairs-name="area_conocimiento" dc-term="creator">
      <pair>
        <displayed-value>1 CIENCIAS FISICO MATEMATICAS Y CIENCIAS DE LA TIERRA</displayed-value>
@@ -477,27 +596,27 @@
    <value-pairs value-pairs-name="document_access_lic" dc-term="rights">
      <pair>
        <displayed-value>Sin Derechos Reservados</displayed-value>
-       <stored-value></stored-value>
+       <stored-value>Sin Derechos Reservados</stored-value>
      </pair>
      <pair>
        <displayed-value>Atribución</displayed-value>
-       <stored-value></stored-value>
+       <stored-value>Atribución</stored-value>
      </pair>
      <pair>
        <displayed-value>Atribución Sin Derivadas</displayed-value>
-       <stored-value></stored-value>
+       <stored-value>Atribución Sin Derivadas</stored-value>
      </pair>
      <pair>
        <displayed-value>Atribución No Comercial</displayed-value>
-       <stored-value></stored-value>
+       <stored-value>Atribución No Comercial</stored-value>
      </pair>
      <pair>
        <displayed-value>Atribución No Comercial Compartir Igual</displayed-value>
-       <stored-value></stored-value>
+       <stored-value>Atribución No Comercial Compartir Igual</stored-value>
      </pair>
      <pair>
        <displayed-value>Atribución No Comercial Sin Derivadas</displayed-value>
-       <stored-value></stored-value>
+       <stored-value>Atribución No Comercial Sin Derivadas</stored-value>
      </pair>
    </value-pairs>
 
