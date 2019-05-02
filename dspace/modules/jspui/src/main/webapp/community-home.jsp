@@ -208,7 +208,7 @@
 
 <%-- Browse --%>
 <div class="panel panel-primary">
-	<div class="panel-heading"><fmt:message key="jsp.general.browse"/></div>
+	<div class="panel-heading"><fmt:message key="jsp.general.browse"/> <fmt:message key="jsp.general.browse-en"/> <%= name %></div>
 	<div class="panel-body">
    				<%-- Insert the dynamic list of browse options --%>
 <%

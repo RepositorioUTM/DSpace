@@ -173,7 +173,7 @@
 
           <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="glyphicon glyphicon-question-sign"></span> Más información <b class="caret"></b></a>
+              <span class="glyphicon glyphicon-question-sign"></span> <fmt:message key="jsp.layout.navbar-default.moreinfo"/><b class="caret"></b></a> <!--mas informacion-->
 
               <ul class="dropdown-menu">
                 <li><a href="Files/example.pdf" download="informacion depositarios RI UTM">Información para los depositarios</a></li>
