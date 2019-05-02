@@ -144,7 +144,7 @@
     <div class="nav navbar-nav navbar-right">
 	 <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-default.language"/><b class="caret"></b></a>
+       <a href="#" class="glyphicon glyphicon-globe" data-toggle="dropdown"><!-- <fmt:message key="jsp.layout.navbar-default.language"/> --><b class="caret"></b></a>
         <ul class="dropdown-menu">
  <%
     for (int i = supportedLocales.length-1; i >= 0; i--)
@@ -176,10 +176,10 @@
               <span class="glyphicon glyphicon-question-sign"></span> <fmt:message key="jsp.layout.navbar-default.moreinfo"/><b class="caret"></b></a> <!--mas informacion-->
 
               <ul class="dropdown-menu">
-                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.depositaries"/></a></li> <!--info para los depositarios-->
-                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.manualRI"/></a></li><!--Manual de uso del RI-->
-                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
-                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a></li> <!--Licencia Creative Commons-->
+                <li><a href="Files/example.pdf" download="informacion depositarios RI UTM">Información para los depositarios</a></li>
+                <li><a href="Files/example.pdf" download="manual RI UTM">Manual de uso del RI</a></li>
+                <li><a href="#">Video-tutoriales</a></li>
+                <li><a href="Files/example.pdf" download="creative commons">Licencia Creative Commons</a></li>
               </ul>
           </li>
 
