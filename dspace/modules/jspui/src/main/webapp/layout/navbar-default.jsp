@@ -144,7 +144,7 @@
     <div class="nav navbar-nav navbar-right">
 	 <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><fmt:message key="jsp.layout.navbar-default.language"/><b class="caret"></b></a>
+       <a href="#" class="glyphicon glyphicon-globe" data-toggle="dropdown"><!-- <fmt:message key="jsp.layout.navbar-default.language"/> --><b class="caret"></b></a>
         <ul class="dropdown-menu">
  <%
     for (int i = supportedLocales.length-1; i >= 0; i--)
@@ -176,10 +176,10 @@
               <span class="glyphicon glyphicon-question-sign"></span> Más información <b class="caret"></b></a>
 
               <ul class="dropdown-menu">
-                <li><a href="#">Información para los depositarios</a></li>
-                <li><a href="#">Manual de uso del RI</a></li>
+                <li><a href="Files/example.pdf" download="informacion depositarios RI UTM">Información para los depositarios</a></li>
+                <li><a href="Files/example.pdf" download="manual RI UTM">Manual de uso del RI</a></li>
                 <li><a href="#">Video-tutoriales</a></li>
-                <li><a href="#">Licencia Creative Commons</a></li>
+                <li><a href="Files/example.pdf" download="creative commons">Licencia Creative Commons</a></li>
               </ul>
           </li>
 
