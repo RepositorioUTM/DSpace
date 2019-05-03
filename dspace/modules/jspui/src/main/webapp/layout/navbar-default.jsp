@@ -151,7 +151,7 @@
      {
  %>
       <li>
-        <a onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
+        <a style="text-transform: capitalize" onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
                   document.repost.submit();" href="<%= currentPage %>?locale=<%=supportedLocales[i].toString()%>">
          <%= supportedLocales[i].getDisplayLanguage(supportedLocales[i])%>
        </a>
