@@ -173,7 +173,7 @@
 
           <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="glyphicon glyphicon-question-sign"></span> Más información <b class="caret"></b></a>
+              <span class="glyphicon glyphicon-question-sign"></span> <fmt:message key="jsp.layout.navbar-default.moreinfo"/><b class="caret"></b></a> <!--mas informacion-->
 
               <ul class="dropdown-menu">
                 <li><button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#depositariosModal" style="color: black; ">

@@ -224,14 +224,15 @@ if (submissions != null && submissions.count() > 0)
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="misionModalLabel" style="text-align: center; color: #4c000e;">Misión del repositorio</h4>
+					<h4 class="modal-title" id="misionModalLabel" style="text-align: center; color: #4c000e;"><fmt:message key="jsp.layout.navbar-default.misiontit"/></h4>  
 				</div>
 				<div class="modal-body">			
 					<p style="color: #6b6b6b;  text-align: justify;">
-									Es una plataforma que emplea estándares internacionales y mecanismos de acceso abierto para albergar publicaciones e información académica, científica y tecnológica generada en nuestra institución. La visibilidad de esta producción se logra a través de la conexión con el Repositorio Nacional (RN) de CONACYT. 
+					<fmt:message key="jsp.layout.navbar-default.misionDes1"/> 
+									 
 					</p>
 					<p style="color: #6b6b6b;  text-align: justify;">
-									El RI-UTM funcionará como una memoria institucional, difundiendo y preservando la producción científica evaluada por pares de la comunidad de manera libre, inmediata, gratuita y protegida. Gracias a esta difusión se fomentarán las discusiones académicas, se crearán comunidades de colaboración y se acelerará el desarrollo del conocimiento
+						<fmt:message key="jsp.layout.navbar-default.misionDes2"/> 
 			        </p>
      
 				</div>
@@ -246,11 +247,11 @@ if (submissions != null && submissions.count() > 0)
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="licenciaModalLabel" style="text-align: center; color: #4c000e;">Licencia Creative Commons</h4>
+					<h4 class="modal-title" id="licenciaModalLabel" style="text-align: center; color: #4c000e;"><fmt:message key="jsp.layout.navbar-default.licenciatit"/> </h4> 
 				</div>
 				<div class="modal-body">			
 					<p style="color: #6b6b6b;  text-align: justify;">
-						Descripción de la licencia Creative Commons 
+						<fmt:message key="jsp.layout.navbar-default.licenciaDes"/> 
 					</p>
 				</div>
 			</div>
@@ -260,12 +261,12 @@ if (submissions != null && submissions.count() > 0)
 	<div class="row" style= "padding: 1% 6%;">
 			 	<div class="col-md-6 col-sm-6" align="left" >
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#misionModal" style="padding: 10px 26px; background-image: none; background-color:#70302c; border-color: #240200;">
-						MISIÓN
+						<fmt:message key="jsp.layout.navbar-default.mision"/> 
 					</button>
 				</div>
 				<div class="col-md-6 col-sm-6" align="right" style="padding-right: 1%" >
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#licenciaModal" style="padding: 10px 20px; background-image: none; background-color:#70302c; border-color: #240200;"">
-						LICENCIA
+						<fmt:message key="jsp.layout.navbar-default.licencia"/>  	
 					</button>
 				</div>
 	</div>

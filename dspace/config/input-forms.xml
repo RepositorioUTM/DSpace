@@ -40,12 +40,11 @@
      <page number="1">
        <field>
          <dc-schema>dc</dc-schema>
-         <dc-element>contributor</dc-element>
-         <dc-qualifier>author</dc-qualifier>
+         <dc-element>creator</dc-element>
          <repeatable>false</repeatable>
          <label>Autor Principal</label>
-         <input-type>name</input-type>
-         <hint></hint>
+         <input-type>onebox</input-type>
+         <hint>Se debe ingresar con el formato NOMBRE APELLIDOS;CVU</hint>
          <required>Campo requerido</required>
        </field>
 
@@ -55,8 +54,8 @@
          <dc-qualifier>adscription</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Área de adscripción</label>
-         <input-type>onebox</input-type>
-         <hint></hint>
+         <input-type value-pairs-name="area_adscripcion">dropdown</input-type>
+         <hint>Aplica solamente cuando el autor es trabajador de la UTM</hint>
          <required></required>
        </field>
 
@@ -67,7 +66,7 @@
          <repeatable>false</repeatable>
          <label>Correo Electrónico</label>
          <input-type>onebox</input-type>
-         <hint></hint>
+         <hint>Correo electrónico institucional o el más utilizado</hint>
          <required></required>
        </field>
 
@@ -77,8 +76,8 @@
          <dc-qualifier>studiesP</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Programa de estudios</label>
-         <input-type>onebox</input-type>
-         <hint></hint>
+         <input-type value-pairs-name="programa_estudios">dropdown</input-type>
+         <hint>Aplica solo en el caso de estudiantes</hint>
          <required></required>
        </field>
 
@@ -138,18 +137,51 @@
          <repeatable>false</repeatable>
          <label>Título</label>
          <input-type>onebox</input-type>
-         <hint></hint>
+         <hint>Título del recurso</hint>
          <required>Campo requerido</required>
        </field>
 
         <field>
          <dc-schema>dc</dc-schema>
          <dc-element>contributor</dc-element>
-         <dc-qualifier>other</dc-qualifier>
+         <dc-qualifier>author</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Autor principal</label>
+         <input-type>name</input-type>
+         <hint>Autor principal del recurso, en minúsculas y con acento</hint>
+         <required></required>
+       </field>
+
+	<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>advisor</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Director de Tesis</label>
+         <input-type>name</input-type>
+         <hint>En caso de tesis, en minúsculas y con acento</hint>
+         <required></required>
+       </field>
+
+	<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
          <repeatable>true</repeatable>
          <label>Autoría</label>
-         <input-type>name</input-type>
-         <hint>Autores del documento</hint>
+         <input-type>onebox</input-type>
+         <hint>Otros autores del recurso. En el caso de la tesis el primero que se agregue debe ser el director de tesis y debe tener el formato  NOMBRE APELLIDOS;CVU</hint>
+         <required></required>
+       </field>
+
+	<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Editor</label>
+         <input-type>onebox</input-type>
+         <hint>Editor o Institución responsable de la publicación. Texto libre, aunque de ser posible se utilizará una lista controlada sin siglas</hint>
          <required></required>
        </field>
 
@@ -169,10 +201,10 @@
          <dc-element>identifier</dc-element>
          <dc-qualifier>citation</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Fuente</label>
+         <label>Cita del recurso</label>
          <input-type>textarea</input-type>
-         <hint>Forma de citación del documento </hint>
-         <required>campo requerido</required>
+         <hint>Texto libre. Forma correcta de citar el recurso (Formato APA)</hint>
+         <required></required>
        </field>
 
         <field>
@@ -182,18 +214,18 @@
          <repeatable>false</repeatable>
          <label>Fecha de publicación</label>
          <input-type>date</input-type>
-         <hint>Se pueden dejar los campos de día y mes vacíos.</hint>
+         <hint>Formato ISO 8601 (AAAA-MM-DD).Se pueden dejar los campos de día y mes vacíos.</hint>
          <required>Se debe incluir por lo menos el año</required>
        </field>
 
        <field>
          <dc-schema>dc</dc-schema>
-         <dc-element>creator</dc-element>
-         <dc-qualifier>knowledges</dc-qualifier>
+         <dc-element>subject</dc-element>
+         <dc-qualifier>other</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Área de conocimiento</label>
-         <input-type>onebox</input-type>
-         <hint></hint>
+	 <input-type value-pairs-name="area_conocimiento">dropdown</input-type>
+         <hint>De acuerdo al catálogo de áreas CONACyT</hint>
          <required>Campo requerido</required>
        </field>
 
@@ -202,9 +234,9 @@
          <dc-element>type</dc-element>
          <dc-qualifier>document</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Tipo de documento</label>
+         <label>Tipo del recurso</label>
          <input-type value-pairs-name="document_types">dropdown</input-type>
-         <hint></hint>
+         <hint>Naturaleza o género del contenido del recurso</hint>
          <required>Campo requerido</required>
        </field>
 
@@ -214,10 +246,43 @@
          <dc-qualifier></dc-qualifier>
          <!-- An input-type of twobox MUST be marked as repeatable -->
          <repeatable>true</repeatable>
-         <label>Keywords</label>
+         <label>Palabras clave</label>
          <input-type>twobox</input-type>
-         <hint>Palabras clave, de 3 a 5 palabras. </hint>
+         <hint>Texto libre. Para el caso de las Tesis se utilizarán las mismas palabras clave de la biblioteca,(palabras o frases separas por ;). </hint>
          <required></required>
+       </field>
+
+	<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Nivel de acceso</label>
+         <input-type value-pairs-name="document_access">dropdown</input-type>
+         <hint>Vocabulario controlado</hint>
+         <required>Campo requerido</required>
+       </field>
+
+	<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier>uri</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Licencia</label>
+         <input-type value-pairs-name="document_access_uri">dropdown</input-type>
+         <hint>Liga de la licencia</hint>
+         <required>Campo requerido</required>
+       </field>
+
+	 <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier>license</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Condiciones de Licencia</label>
+         <input-type value-pairs-name="document_access_lic">dropdown</input-type>
+         <hint>Condiciones de la licencia</hint>
+         <required>Campo requerido</required>
        </field>
 
        <field>
@@ -225,14 +290,70 @@
          <dc-element>type</dc-element>
          <dc-qualifier>status</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Estado del documento</label>
+         <label>Estado del recurso </label>
          <input-type value-pairs-name="document_state">dropdown</input-type>
          <hint></hint>
          <required>Campo requerido</required>
        </field>
-
+	
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Idioma</label>
+         <input-type value-pairs-name="common_iso_languages">dropdown</input-type>
+         <hint>Selecciona el idioma del principal contenido de este item.  Si el lenguaje no aparece en la lista, selecciona 'Otro'.  Si el contenido no tiene un lenguaje (por ejemplo, si es una imagen o un conjunto de datos) selecciona 'N/A'.</hint>
+         <required></required>
+       </field>
      </page>
    </form>
+
+	<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>coverage</dc-element>
+         <dc-qualifier>temporal</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Cobertura</label>
+         <input-type>onebox</input-type>
+         <hint>Cobertura jurisdiccional, temporal o espacial</hint>
+         <required></required>
+       </field>
+
+	<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>ispartof</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Identificador o descripción del proyecto</label>
+         <input-type>onebox</input-type>
+         <hint>Se adicionará un elemento por cada ISNI o DOI para cada financiador o en caso de las tesis rellenará con REPOSITORIO NACIONAL CONACYT</hint>
+         <required></required>
+       </field>
+
+	<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>other</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Identificador alternativo a la publicación dc.identifier.other</label>
+         <input-type>onebox</input-type>
+         <hint>Si el documento tiene otros identificadores (ark,arxiv,doi,hdl,isbn,pissn,eissn,pmid,purl,urn,wos)</hint>
+         <required></required>
+       </field>
+
+	<field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>source</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Fuente</label>
+         <input-type>onebox</input-type>
+         <hint>Aplica cuando el recurso es parte de otro (ISBN o ISSN)</hint>
+         <required></required>
+       </field>
+
+
 
    <form name="one">
      <page number="1">
@@ -264,38 +385,290 @@
  <!-- element. A UI list displays the displayed-values, but the program     -->
  <!-- stores the associated stored-values in the database.                  -->
 
+<!-- article, masterThesis, doctoralThesis; book, bookPart, review, conferenceObject, lecture, workingPaper, preprint, report, annotation, contributionToPeriodical, patent y other-->
  <form-value-pairs>
+
+   <value-pairs value-pairs-name="area_adscripcion" dc-term="adscription">
+     <pair>
+       <displayed-value>N/A</displayed-value>
+       <stored-value></stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Posgrado</displayed-value>
+       <stored-value>Instituto de Posgrado</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Diseño</displayed-value>
+       <stored-value>Instituto de Diseño</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Ciencias Sociales y Humanidades</displayed-value>
+       <stored-value>Instituto de Ciencias Sociales y Humanidades</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Física y Matemáticas</displayed-value>
+       <stored-value>Instituto de Física y Matemáticas</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Hidrología</displayed-value>
+       <stored-value>Instituto de Hidrología</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Minería</displayed-value>
+       <stored-value>Instituto de Minería</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Electrónica y Mecatrónica</displayed-value>
+       <stored-value>Instituto de Electrónica y Mecatrónica</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Agroindustrias</displayed-value>
+       <stored-value>Instituto de Agroindustrias</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Instituto de Ingeniería Industrial y Automotríz</displayed-value>
+       <stored-value>Instituto de Ingeniería Industrial y Automotríz</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Centro de Idiomas</displayed-value>
+       <stored-value>Centro de Idiomas</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Laboratorios de Posgrado</displayed-value>
+       <stored-value>Laboratorios de Posgrado</stored-value>
+     </pair>
+   </value-pairs>
+
+   <value-pairs value-pairs-name="programa_estudios" dc-term="studiesP">
+     <pair>
+       <displayed-value>N/A</displayed-value>
+       <stored-value></stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN ADMINISTRACIÓN DE NEGOCIOS</displayed-value>
+       <stored-value>MAESTRÍA EN ADMINISTRACIÓN DE NEGOCIOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN MEDIOS INTERACTIVOS</displayed-value>
+       <stored-value>MAESTRÍA EN MEDIOS INTERACTIVOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN SISTEMAS DISTRIBUIDOS</displayed-value>
+       <stored-value>MAESTRÍA EN SISTEMAS DISTRIBUIDOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN ELECTRÓNICA, OPCIÓN: SISTEMAS INTELIGENTES APLICADOS</displayed-value>
+       <stored-value>MAESTRÍA EN ELECTRÓNICA, OPCIÓN: SISTEMAS INTELIGENTES APLICADOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN TECNOLOGÍAS DE CÓMPUTO APLICADO</displayed-value>
+       <stored-value>MAESTRÍA EN TECNOLOGÍAS DE CÓMPUTO APLICADO</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN TECNOLOGÍA AVANZADA DE MANUFACTURA</displayed-value>
+       <stored-value>MAESTRÍA EN TECNOLOGÍA AVANZADA DE MANUFACTURA</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN CIENCIAS: PRODUCTOS NATURALES Y ALIMENTOS</displayed-value>
+       <stored-value>MAESTRÍA EN CIENCIAS: PRODUCTOS NATURALES Y ALIMENTOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN DISEÑO DE MODAS</displayed-value>
+       <stored-value>MAESTRÍA EN DISEÑO DE MODAS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN DISEÑO DE MUEBLES</displayed-value>
+       <stored-value>MAESTRÍA EN DISEÑO DE MUEBLES</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN MODELACIÓN MATEMÁTICA</displayed-value>
+       <stored-value>MAESTRÍA EN MODELACIÓN MATEMÁTICA</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN ROBÓTICA</displayed-value>
+       <stored-value>MAESTRÍA EN ROBÓTICA</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>MAESTRÍA EN CIENCIAS DE MATERIALES</displayed-value>
+       <stored-value>MAESTRÍA EN CIENCIAS DE MATERIALES</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>DOCTORADO EN TECNOLOGÍAS DE CÓMPUTO APLICADO</displayed-value>
+       <stored-value>DOCTORADO EN TECNOLOGÍAS DE CÓMPUTO APLICADO</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>DOCTORADO EN ELECTRÓNICA, ESPECIALIDAD: SISTEMAS INTELIGENTES APLICADOS</displayed-value>
+       <stored-value>DOCTORADO EN ELECTRÓNICA, ESPECIALIDAD: SISTEMAS INTELIGENTES APLICADOS</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>DOCTORADO EN MODELACIÓN MATEMÁTICA</displayed-value>
+       <stored-value>DOCTORADO EN MODELACIÓN MATEMÁTICA</stored-value>
+     </pair>
+   </value-pairs>
+	
+  <value-pairs value-pairs-name="area_conocimiento" dc-term="creator">
+     <pair>
+       <displayed-value>1 CIENCIAS FISICO MATEMATICAS Y CIENCIAS DE LA TIERRA</displayed-value>
+       <stored-value>1 CIENCIAS FISICO MATEMATICAS Y CIENCIAS DE LA TIERRA</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>2 BIOLOGIA Y QUIMICA</displayed-value>
+       <stored-value>2 BIOLOGIA Y QUIMICA</stored-value>
+      </pair>
+     <pair>
+       <displayed-value>3 MEDICINA Y CIENCIAS DE LA SALUD</displayed-value>
+       <stored-value>3 MEDICINA Y CIENCIAS DE LA SALUD</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>4 HUMANIDADES Y CIENCIAS DE LA CONDUCTA</displayed-value>
+       <stored-value>4 HUMANIDADES Y CIENCIAS DE LA CONDUCTA</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>5 CIENCIAS SOCIALES</displayed-value>
+       <stored-value>5 CIENCIAS SOCIALES</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>6 CIENCIAS AGROPECUARIAS Y BIOTECNOLOGIA</displayed-value>
+       <stored-value>6 CIENCIAS AGROPECUARIAS Y BIOTECNOLOGIA</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>7 INGENIERIA Y TECNOLOGIA</displayed-value>
+       <stored-value>7 INGENIERIA Y TECNOLOGIA</stored-value>
+     </pair>
+   </value-pairs>
    <value-pairs value-pairs-name="document_types" dc-term="type">
      <pair>
        <displayed-value>Artículos</displayed-value>
-       <stored-value>articulos</stored-value>
+       <stored-value>article</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Tesis de Maestría</displayed-value>
+       <stored-value>masterThesis</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Tesis de Doctorado</displayed-value>
+       <stored-value>doctoralThesis</stored-value>
      </pair>
      <pair>
        <displayed-value>Libros</displayed-value>
-       <stored-value>libros</stored-value>
+       <stored-value>book</stored-value>
      </pair>
      <pair>
        <displayed-value>Revista TEMAS</displayed-value>
        <stored-value>Revtemas</stored-value>
      </pair>
      <pair>
-       <displayed-value>Tesis de Posgrado</displayed-value>
-       <stored-value>tesisPos</stored-value>
+       <displayed-value>Patente</displayed-value>
+       <stored-value>patent</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Otro</displayed-value>
+       <stored-value>other</stored-value>
+     </pair> 
+   </value-pairs>
+
+   <value-pairs value-pairs-name="document_access" dc-term="rights">
+     <pair>
+       <displayed-value>Acceso Abierto</displayed-value>
+       <stored-value>openAccess</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Acceso Restringido</displayed-value>
+       <stored-value>restrictedAccess</stored-value>
+      </pair>
+     <pair>
+       <displayed-value>Acceso Cerrado</displayed-value>
+       <stored-value>closedAccess</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Acceso embargado</displayed-value>
+       <stored-value>embargoedAccess</stored-value>
+     </pair>
+   </value-pairs>
+
+   <value-pairs value-pairs-name="document_access_uri" dc-term="rights">
+     <pair>
+       <displayed-value>http://creativecommons.org/licenses/by-nc-nd/4.0</displayed-value>
+       <stored-value>http://creativecommons.org/licenses/by-nc-nd/4.0</stored-value>
+     </pair>
+   </value-pairs>
+	
+   <value-pairs value-pairs-name="document_access_lic" dc-term="rights">
+     <pair>
+       <displayed-value>Sin Derechos Reservados</displayed-value>
+       <stored-value>Sin Derechos Reservados</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Atribución</displayed-value>
+       <stored-value>Atribución</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Atribución Sin Derivadas</displayed-value>
+       <stored-value>Atribución Sin Derivadas</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Atribución No Comercial</displayed-value>
+       <stored-value>Atribución No Comercial</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Atribución No Comercial Compartir Igual</displayed-value>
+       <stored-value>Atribución No Comercial Compartir Igual</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Atribución No Comercial Sin Derivadas</displayed-value>
+       <stored-value>Atribución No Comercial Sin Derivadas</stored-value>
      </pair>
    </value-pairs>
 
    <value-pairs value-pairs-name="document_state" dc-term="type">
      <pair>
-       <displayed-value>Entregado y listo para publicar en RI</displayed-value>
-       <stored-value>entregado</stored-value>
+       <displayed-value>borrador</displayed-value>
+       <stored-value>draft</stored-value>
      </pair>
      <pair>
-       <displayed-value>Pendiente de envío</displayed-value>
-       <stored-value>pendEnvio</stored-value>
+       <displayed-value>versión enviada</displayed-value>
+       <stored-value>submittedVersion</stored-value>
       </pair>
      <pair>
-       <displayed-value>Pendiente por fecha de expiración de embargo</displayed-value>
-       <stored-value>pendEmbargo</stored-value>
+       <displayed-value>versión aceptada</displayed-value>
+       <stored-value>acceptedVersion</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>versión publicada</displayed-value>
+       <stored-value>publishedVersion</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>versión actualizada</displayed-value>
+       <stored-value>updatedVersion</stored-value>
+     </pair>
+   </value-pairs>
+    <!-- default language order: (from dspace 1.2.1)
+        "en_US", "en", "es", "de", "fr", "it", "ja", "zh", "other", ""
+     -->
+   <value-pairs value-pairs-name="common_iso_languages" dc-term="language_iso">
+     <pair>
+       <displayed-value>N/A</displayed-value>
+       <stored-value></stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Inglés</displayed-value>
+       <stored-value>eng</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Español</displayed-value>
+       <stored-value>spa</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Portugués</displayed-value>
+       <stored-value>por</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Francés</displayed-value>
+       <stored-value>fra</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>(Other)</displayed-value>
+       <stored-value>other</stored-value>
      </pair>
    </value-pairs>
 
