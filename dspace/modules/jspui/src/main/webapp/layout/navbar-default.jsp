@@ -63,7 +63,7 @@
     
     // get the browse indices
     
-	BrowseIndex[] bis = BrowseIndex.getBrowseIndices();
+  BrowseIndex[] bis = BrowseIndex.getBrowseIndices();
     BrowseInfo binfo = (BrowseInfo) request.getAttribute("browse.info");
     String browseCurrent = "";
     if (binfo != null)
@@ -74,7 +74,7 @@
         if (bix.isMetadataIndex() || bix.getSortOption() == binfo.getSortOption())
         {
             if (bix.getName() != null)
-    			browseCurrent = bix.getName();
+          browseCurrent = bix.getName();
         }
     }
  // get the locale languages
@@ -109,27 +109,27 @@
                <!--<li><a href="<%= request.getContextPath() %>/community-list"><fmt:message key="jsp.layout.navbar-default.communities-collections"/></a></li>-->
                <li><a href="<%= request.getContextPath() %>/community-list"><fmt:message key="jsp.layout.navbar-default.communities-collections"/></a></li> <!--comunidades y colecciones-->
 
-      				<li class="divider"></li>
+              <li class="divider"></li>
               <!--<li class="dropdown-header"><fmt:message key="jsp.layout.navbar-default.browseitemsby"/></li>-->
               <li class="dropdown-header"><fmt:message key="jsp.layout.navbar-default.browseitemsby"/> </li> <!--buscar por-->
-      				<%-- Insert the dynamic browse indices here --%>
-      				
-      				<%
-      					for (int i = 0; i < bis.length; i++)
-      					{
-      						BrowseIndex bix = bis[i];
-      						String key = "browse.menu." + bix.getName();
+              <%-- Insert the dynamic browse indices here --%>
+              
+              <%
+                for (int i = 0; i < bis.length; i++)
+                {
+                  BrowseIndex bix = bis[i];
+                  String key = "browse.menu." + bix.getName();
 
                   String menu[] = {"Fecha de publicación", "Autor", "Título", "Tema", "Fecha de envío"};
                   
-      					%>
-      				      			<li><a href="<%= request.getContextPath() %>/browse?type=<%= bix.getName() %>"><fmt:message key="<%= key %>"/></a></li>
+                %>
+                          <li><a href="<%= request.getContextPath() %>/browse?type=<%= bix.getName() %>"><fmt:message key="<%= key %>"/></a></li>
                          <!-- <li><a href="<%= request.getContextPath() %>/browse?type=<%= bix.getName() %>"><%=menu[i] %></a></li>-->
-      					<%	
-      					 }
-      				%>
-      				    
-      				<%-- End of dynamic browse indices --%>
+                <%  
+                 }
+              %>
+                  
+              <%-- End of dynamic browse indices --%>
 
                   </ul>
           </li>       
@@ -142,7 +142,7 @@
      {
  %>
     <div class="nav navbar-nav navbar-right">
-	 <ul class="nav navbar-nav navbar-right">
+   <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
        <a href="#" class="glyphicon glyphicon-globe" data-toggle="dropdown"><!-- <fmt:message key="jsp.layout.navbar-default.language"/> --><b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -151,7 +151,7 @@
      {
  %>
       <li>
-        <a onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
+        <a style="text-transform: capitalize" onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
                   document.repost.submit();" href="<%= currentPage %>?locale=<%=supportedLocales[i].toString()%>">
          <%= supportedLocales[i].getDisplayLanguage(supportedLocales[i])%>
        </a>
@@ -168,7 +168,7 @@
  %>
  
        <div class="nav navbar-nav navbar-right">
-		<ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">
           <!--manuales-->
 
           <li class="dropdown">
@@ -176,7 +176,10 @@
               <span class="glyphicon glyphicon-question-sign"></span> <fmt:message key="jsp.layout.navbar-default.moreinfo"/><b class="caret"></b></a> <!--mas informacion-->
 
               <ul class="dropdown-menu">
-                <li><a href="Files/example.pdf" download="informacion depositarios RI UTM">Información para los depositarios</a></li>
+                <li><button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#depositariosModal" style="color: black; ">
+            Información para los depositarios
+          </button>
+                  </li>
                 <li><a href="Files/example.pdf" download="manual RI UTM">Manual de uso del RI</a></li>
                 <li><a href="#">Video-tutoriales</a></li>
                 <li><a href="Files/example.pdf" download="creative commons">Licencia Creative Commons</a></li>
@@ -189,30 +192,30 @@
          <%
     if (user != null)
     {
-		%>
-		<a href="#" class="dropdown-toggle" style="color: #fff" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> 
+    %>
+    <a href="#" class="dropdown-toggle" style="color: #fff" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> 
          <!--<fmt:message key="jsp.layout.navbar-default.loggedin">
-		      <fmt:param><%= StringUtils.abbreviate(navbarEmail, 13) %></fmt:param>
-		  </fmt:message> -->
+          <fmt:param><%= StringUtils.abbreviate(navbarEmail, 13) %></fmt:param>
+      </fmt:message> -->
       <%= StringUtils.abbreviate(navbarEmail, 20) %>
       <b class="caret"></b></a>
-		<%
+    <%
     } else {
-		%>
+    %>
              <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> <fmt:message key="jsp.layout.navbar-default.sign"/> <b class="caret"></b></a>-->
              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Admin <b class="caret"></b></a>
 
              <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Admin<b class="caret"></b></a>-->
-	<% } %>             
+  <% } %>             
              <ul class="dropdown-menu">
                <li><a href="<%= request.getContextPath() %>/mydspace"><fmt:message key="jsp.layout.navbar-default.users"/></a></li>
                <li><a href="<%= request.getContextPath() %>/subscribe"><fmt:message key="jsp.layout.navbar-default.receive"/></a></li>
                <li><a href="<%= request.getContextPath() %>/profile"><fmt:message key="jsp.layout.navbar-default.edit"/></a></li>
 
-		<%
+    <%
                 if (isAdmin || isCommunityAdmin || isCollectionAdmin) {
                 %>
-			   <li class="divider"></li>
+         <li class="divider"></li>
                            <% if (isAdmin) {%>
                     
                                 <li><a href="<%= request.getContextPath()%>/dspace-admin">
@@ -223,18 +226,18 @@
                 <fmt:message key="jsp.administer"/></a></li>
                 <%
                     }
-		  if (user != null) {
-		%>
-		<li ><a  href="<%= request.getContextPath() %>/logout"><span class="glyphicon glyphicon-log-out"></span> <fmt:message key="jsp.layout.navbar-default.logout"/></a></li>
-		<% } %>
+      if (user != null) {
+    %>
+    <li ><a  href="<%= request.getContextPath() %>/logout"><span class="glyphicon glyphicon-log-out"></span> <fmt:message key="jsp.layout.navbar-default.logout"/></a></li>
+    <% } %>
              </ul>
                     
            </li>           
           </ul>
           
-	<%-- Search Box --%>
-	<form method="get" action="<%= request.getContextPath() %>/simple-search" class="navbar-form navbar-right">
-	    <div class="form-group">
+  <%-- Search Box --%>
+  <form method="get" action="<%= request.getContextPath() %>/simple-search" class="navbar-form navbar-right">
+      <div class="form-group">
           <!--<input type="text" class="form-control" placeholder="<fmt:message key="jsp.layout.navbar-default.search"/>" name="query" id="tequery" size="25"/>-->
           <input type="text" class="form-control" placeholder="<fmt:message key="jsp.layout.navbar-default.search"/>" name="query" id="tequery" size="25"/>
         </div>
@@ -243,12 +246,47 @@
 
 <%--               <br/><a href="<%= request.getContextPath() %>/advanced-search"><fmt:message key="jsp.layout.navbar-default.advanced"/></a>
 <%
-			if (ConfigurationManager.getBooleanProperty("webui.controlledvocabulary.enable"))
-			{
+      if (ConfigurationManager.getBooleanProperty("webui.controlledvocabulary.enable"))
+      {
 %>        
               <br/><a href="<%= request.getContextPath() %>/subject-search"><fmt:message key="jsp.layout.navbar-default.subjectsearch"/></a>
 <%
             }
 %> --%>
-	</form></div>
+  </form>
+</div>
+  <div class="modal fade" id="depositariosModal" tabindex="-1" role="dialog" aria-labelledby="depositariosModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="
+    overflow-y: initial !important
+">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="depositariosModalLabel" style="text-align: center; color: #4c000e;">Información para los Depositarios</h4>
+        </div>
+        <div class="modal-body" style="
+    height: 40vw;
+    overflow-y: auto;">      
+          <p style="color: #6b6b6b;">
+                  ¿Qué es el RI-UTM?
+Es una plataforma que emplea estándares internacionales y mecanismos de acceso abierto para albergar publicaciones e información académica, científica y tecnológica generada en nuestra institución. La visibilidad de esta producción se logra a través de la conexión con el Repositorio Nacional (RN) de CONACYT.
+El RI-UTM funcionará como una memoria institucional, difundiendo y preservando la producción científica evaluada por pares de la comunidad de manera libre, inmediata, gratuita y protegida. Gracias a esta difusión se fomentarán las discusiones académicas, se crearán comunidades de colaboración y se acelerará el desarrollo del conocimiento.
+¿Por qué publicar en el RI-UTM?
+    • Acelerar el proceso de comunicación y difusión de la ciencia. 
+    • Permitir elevar la visibilidad de las investigaciones realizadas en la UTM. 
+    • Aumentar la proyección del perfil de los investigadores a una escala nacional e internacional, así como el impacto de sus investigaciones.
+    • Mostrar la producción científica de la institución y dar seguimiento al impacto de las investigaciones de los estudiantes y  profesores.
+    • Desarrollar y fortalecer una cultura de aprendizaje permanente.
+    • Ahorrar costos al tener acceso a los contenidos del repositorio sin pagar suscripciones.
+    • Fomentar la creación de publicaciones electrónicas.
+
+          </p>
+          
+     
+        </div>
+      </div>
+    </div>
+  </div>
     </nav>
