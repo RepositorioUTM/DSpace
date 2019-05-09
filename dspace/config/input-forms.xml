@@ -306,8 +306,7 @@
          <hint>Selecciona el idioma del principal contenido de este item.  Si el lenguaje no aparece en la lista, selecciona 'Otro'.  Si el contenido no tiene un lenguaje (por ejemplo, si es una imagen o un conjunto de datos) selecciona 'N/A'.</hint>
          <required></required>
        </field>
-     </page>
-   </form>
+   
 
 	<field>
          <dc-schema>dc</dc-schema>
@@ -352,7 +351,8 @@
          <hint>Aplica cuando el recurso es parte de otro (ISBN o ISSN)</hint>
          <required></required>
        </field>
-
+     </page>
+   </form>
 
 
    <form name="one">
