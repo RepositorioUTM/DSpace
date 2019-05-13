@@ -150,6 +150,7 @@
     for (int i = supportedLocales.length-1; i >= 0; i--)
      {
  %>
+  <% if (!sessionLocale.getLanguage().equals(supportedLocales[i].getLanguage())) { %>
       <li>
         <a style="text-transform: capitalize" onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
                   document.repost.submit();" href="<%= currentPage %>?locale=<%=supportedLocales[i].toString()%>">
@@ -157,6 +158,7 @@
        </a>
       </li>
  <%
+      }
      }
  %>
      </ul>
