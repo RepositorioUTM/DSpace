@@ -179,7 +179,7 @@
 
               <ul class="dropdown-menu">
                 <li>
-                  <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#depositariosModal" style="color: black; "><fmt:message key="jsp.layout.navbar-default.depositaries"/></button>
+             <a href="Files/informacionDepositarios.pdf" download="Informacion para Depositarios.pdf"><fmt:message key="jsp.layout.navbar-default.depositaries"/></a>
                 </li><!--info para los depositarios-->    
                 <li><a href="Files/ManualdeUsuario.pdf" download="manual RI UTM"><fmt:message key="jsp.layout.navbar-default.manualRI"/></a></li><!--Manual de uso del RI-->
                 <li><a href="#"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
