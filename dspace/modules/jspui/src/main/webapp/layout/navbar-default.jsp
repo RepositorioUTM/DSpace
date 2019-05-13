@@ -150,6 +150,7 @@
     for (int i = supportedLocales.length-1; i >= 0; i--)
      {
  %>
+  <% if (!sessionLocale.getLanguage().equals(supportedLocales[i].getLanguage())) { %>
       <li>
         <a style="text-transform: capitalize" onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
                   document.repost.submit();" href="<%= currentPage %>?locale=<%=supportedLocales[i].toString()%>">
@@ -157,6 +158,7 @@
        </a>
       </li>
  <%
+      }
      }
  %>
      </ul>
@@ -176,13 +178,17 @@
               <span class="glyphicon glyphicon-question-sign"></span> <fmt:message key="jsp.layout.navbar-default.moreinfo"/><b class="caret"></b></a> <!--mas informacion-->
 
               <ul class="dropdown-menu">
-                <li><button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#depositariosModal" style="color: black; ">
-            Información para los depositarios
-          </button>
-                  </li>
-                <li><a href="Files/example.pdf" download="manual RI UTM">Manual de uso del RI</a></li>
-                <li><a href="#">Video-tutoriales</a></li>
-                <li><a href="Files/example.pdf" download="creative commons">Licencia Creative Commons</a></li>
+                <li>
+                  <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#depositariosModal" style="color: black; "><fmt:message key="jsp.layout.navbar-default.depositaries"/></button>
+                </li><!--info para los depositarios-->    
+                <li><a href="Files/ManualdeUsuario.pdf" download="manual RI UTM"><fmt:message key="jsp.layout.navbar-default.manualRI"/></a></li><!--Manual de uso del RI-->
+                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
+                <li>  <%  if (sessionLocale.getLanguage().equals(new Locale("es").getLanguage())) {%>
+                  <a href="Files/CREATIVE_COMMONS_ESP_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/><%= sessionLocale %></a>
+                  <% } else { %>
+                   <a href="Files/CREATIVE_COMMONS_ING_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/><%= sessionLocale %></a>
+                  <% } %> 
+                </li><!--Licencia Creative Commons-->
               </ul>
           </li>
 
