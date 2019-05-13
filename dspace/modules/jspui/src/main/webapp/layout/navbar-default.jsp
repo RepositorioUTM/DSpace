@@ -176,13 +176,12 @@
               <span class="glyphicon glyphicon-question-sign"></span> <fmt:message key="jsp.layout.navbar-default.moreinfo"/><b class="caret"></b></a> <!--mas informacion-->
 
               <ul class="dropdown-menu">
-                <li><button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#depositariosModal" style="color: black; ">
-            Información para los depositarios
-          </button>
-                  </li>
-                <li><a href="Files/example.pdf" download="manual RI UTM">Manual de uso del RI</a></li>
-                <li><a href="#">Video-tutoriales</a></li>
-                <li><a href="Files/example.pdf" download="creative commons">Licencia Creative Commons</a></li>
+                <li>
+                  <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#depositariosModal" style="color: black; "><fmt:message key="jsp.layout.navbar-default.depositaries"/></button>
+                </li><!--info para los depositarios-->    
+                <li><a href="Files/ManualdeUsuario.pdf" download="manual RI UTM"><fmt:message key="jsp.layout.navbar-default.manualRI"/></a></li><!--Manual de uso del RI-->
+                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
+                <li><a href="Files/CREATIVE_COMMONS_ESP_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a></li><!--Licencia Creative Commons-->
               </ul>
           </li>
 
