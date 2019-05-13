@@ -181,10 +181,10 @@
                 </li><!--info para los depositarios-->    
                 <li><a href="Files/ManualdeUsuario.pdf" download="manual RI UTM"><fmt:message key="jsp.layout.navbar-default.manualRI"/></a></li><!--Manual de uso del RI-->
                 <li><a href="#"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
-                <li>  <% if(sessionLocale.equals("es")) {%>
-                  <a href="Files/CREATIVE_COMMONS_ESP_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a>
+                <li>  <%  if (sessionLocale.getLanguage().equals(new Locale("es").getLanguage())) {%>
+                  <a href="Files/CREATIVE_COMMONS_ESP_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/><%= sessionLocale %></a>
                   <% } else { %>
-                   <a href="Files/CREATIVE_COMMONS_ING_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a>
+                   <a href="Files/CREATIVE_COMMONS_ING_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/><%= sessionLocale %></a>
                   <% } %> 
                 </li><!--Licencia Creative Commons-->
               </ul>
