@@ -32,7 +32,6 @@
 <%@ page import="org.dspace.browse.BrowseInfo" %>
 <%@ page import="java.util.Map" %>
 
-<script src="https://github.com/pipwerks/PDFObject/blob/master/pdfobject.min.js"></script>
 <%
     // Is anyone logged in?
     EPerson user = (EPerson) request.getAttribute("dspace.current.user");
@@ -93,7 +92,7 @@
          </button>
          <a class="navbar-brand" href="<%= request.getContextPath() %>/"><img height="25" src="<%= request.getContextPath() %>/image/logo-only.png" alt="DSpace logo" /></a>
        </div>
-       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+       <nav class="collapse navbar-collapse bs-navbar-collapse " role="navigation">
                          <!--mmmmmmmmmmmmmmmmmmmmmmmmmmenuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu-->
          <ul class="nav navbar-nav">
            
@@ -191,9 +190,9 @@
                 <li><a href="Files/ManualdeUsuario.pdf" download="manual RI UTM"><fmt:message key="jsp.layout.navbar-default.manualRI"/></a></li><!--Manual de uso del RI-->
                 <li><a href="#"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
                 <li>  <% if (sessionLocale.getLanguage().equals(new Locale("es").getLanguage())) { %>
-                  <a href="Files/CREATIVE_COMMONS_ESP_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a>
+                  <a href="Files/CREATIVE_COMMONS_ESP_V3.pdf" download="Licencia creative commons.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a>
                   <% } else { %>
-                   <a href="Files/CREATIVE_COMMONS_ING_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a>
+                   <a href="Files/CREATIVE_COMMONS_ING_V3.pdf" download="Creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a>
                   <% } %> 
                 </li><!--Licencia Creative Commons-->
               </ul>
@@ -287,4 +286,4 @@
       </div>
     </div>
   </div>
-    </nav>
+</nav>

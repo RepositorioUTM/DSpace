@@ -250,14 +250,16 @@ if (submissions != null && submissions.count() > 0)
 					<h4 class="modal-title" id="licenciaModalLabel" style="text-align: center; color: #4c000e;"><fmt:message key="jsp.layout.navbar-default.licenciatit"/> </h4> 
 				</div>
 				<div class="modal-body">			
-					<p style="color: #6b6b6b;  text-align: justify;">
-						<fmt:message key="jsp.layout.navbar-default.licenciaDes"/> 
-					</p>
+					<% if (sessionLocale.getLanguage().equals(new Locale("es").getLanguage())) { %>	
+						<embed src="Files/CREATIVE_COMMONS_ESP_V3.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
+					<% } else { %>
+						<embed src="Files/CREATIVE_COMMONS_ING_V3.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
+					<% } %> 
+
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<div class="row" style= "padding: 1% 6%;">
 			 	<div class="col-md-6 col-sm-6" align="left" >
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#misionModal" style="padding: 10px 26px; background-image: none; background-color:#70302c; border-color: #240200;">
