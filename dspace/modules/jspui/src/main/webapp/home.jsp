@@ -251,9 +251,9 @@ if (submissions != null && submissions.count() > 0)
 				</div>
 				<div class="modal-body">			
 					<% if (sessionLocale.getLanguage().equals(new Locale("es").getLanguage())) { %>	
-						<embed src="Files/CREATIVE_COMMONS_ESP_V3.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
+						<embed src="Files/LICENCIA_TEXTO_ESP.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
 					<% } else { %>
-						<embed src="Files/CREATIVE_COMMONS_ING_V3.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
+						<embed src="Files/LICENCIA_TEXTO_ING.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
 					<% } %> 
 
 				</div>
