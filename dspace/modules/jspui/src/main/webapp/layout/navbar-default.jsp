@@ -31,6 +31,8 @@
 <%@ page import="org.dspace.browse.BrowseIndex" %>
 <%@ page import="org.dspace.browse.BrowseInfo" %>
 <%@ page import="java.util.Map" %>
+
+<script src="https://github.com/pipwerks/PDFObject/blob/master/pdfobject.min.js"></script>
 <%
     // Is anyone logged in?
     EPerson user = (EPerson) request.getAttribute("dspace.current.user");
@@ -150,15 +152,18 @@
     for (int i = supportedLocales.length-1; i >= 0; i--)
      {
  %>
-  <% if (!sessionLocale.getLanguage().equals(supportedLocales[i].getLanguage())) { %>
+ <% if (!sessionLocale.getLanguage().equals(supportedLocales[i].getLanguage())) { %>
       <li>
+
         <a style="text-transform: capitalize" onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
                   document.repost.submit();" href="<%= currentPage %>?locale=<%=supportedLocales[i].toString()%>">
          <%= supportedLocales[i].getDisplayLanguage(supportedLocales[i])%>
        </a>
+
       </li>
+
  <%
-      }
+}
      }
  %>
      </ul>
@@ -179,14 +184,16 @@
 
               <ul class="dropdown-menu">
                 <li>
-             <a href="Files/informacionDepositarios.pdf" download="Informacion para Depositarios.pdf"><fmt:message key="jsp.layout.navbar-default.depositaries"/></a>
-                </li><!--info para los depositarios-->    
+                  <a href="Files/informacionDepositarios.pdf" download="Informacion para Depositarios.pdf"><fmt:message key="jsp.layout.navbar-default.depositaries"/></a>
+                </li><!--info para los depositarios-->   
+                <li>
+                </li> 
                 <li><a href="Files/ManualdeUsuario.pdf" download="manual RI UTM"><fmt:message key="jsp.layout.navbar-default.manualRI"/></a></li><!--Manual de uso del RI-->
                 <li><a href="#"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
-                <li>  <%  if (sessionLocale.getLanguage().equals(new Locale("es").getLanguage())) {%>
-                  <a href="Files/CREATIVE_COMMONS_ESP_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/><%= sessionLocale %></a>
+                <li>  <% if (sessionLocale.getLanguage().equals(new Locale("es").getLanguage())) { %>
+                  <a href="Files/CREATIVE_COMMONS_ESP_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a>
                   <% } else { %>
-                   <a href="Files/CREATIVE_COMMONS_ING_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/><%= sessionLocale %></a>
+                   <a href="Files/CREATIVE_COMMONS_ING_V3.pdf" download="creative commons License.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a>
                   <% } %> 
                 </li><!--Licencia Creative Commons-->
               </ul>
@@ -261,7 +268,9 @@
 %> --%>
   </form>
 </div>
-  <div class="modal fade" id="depositariosModal" tabindex="-1" role="dialog" aria-labelledby="depositariosModalLabel" aria-hidden="true">
+
+
+  <div style="position: fixed;" class="modal fade" id="depositariosModal" tabindex="-1" role="dialog" aria-labelledby="depositariosModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document" style="
     overflow-y: initial !important
 ">
@@ -272,24 +281,7 @@
           </button>
           <h4 class="modal-title" id="depositariosModalLabel" style="text-align: center; color: #4c000e;">Información para los Depositarios</h4>
         </div>
-        <div class="modal-body" style="
-    height: 40vw;
-    overflow-y: auto;">      
-          <p style="color: #6b6b6b;">
-                  ¿Qué es el RI-UTM?
-Es una plataforma que emplea estándares internacionales y mecanismos de acceso abierto para albergar publicaciones e información académica, científica y tecnológica generada en nuestra institución. La visibilidad de esta producción se logra a través de la conexión con el Repositorio Nacional (RN) de CONACYT.
-El RI-UTM funcionará como una memoria institucional, difundiendo y preservando la producción científica evaluada por pares de la comunidad de manera libre, inmediata, gratuita y protegida. Gracias a esta difusión se fomentarán las discusiones académicas, se crearán comunidades de colaboración y se acelerará el desarrollo del conocimiento.
-¿Por qué publicar en el RI-UTM?
-    • Acelerar el proceso de comunicación y difusión de la ciencia. 
-    • Permitir elevar la visibilidad de las investigaciones realizadas en la UTM. 
-    • Aumentar la proyección del perfil de los investigadores a una escala nacional e internacional, así como el impacto de sus investigaciones.
-    • Mostrar la producción científica de la institución y dar seguimiento al impacto de las investigaciones de los estudiantes y  profesores.
-    • Desarrollar y fortalecer una cultura de aprendizaje permanente.
-    • Ahorrar costos al tener acceso a los contenidos del repositorio sin pagar suscripciones.
-    • Fomentar la creación de publicaciones electrónicas.
-
-          </p>
-          
+        <div class="modal-body">
      
         </div>
       </div>
