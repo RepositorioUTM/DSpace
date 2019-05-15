@@ -48,7 +48,7 @@
                         <!--<fmt:message key="jsp.layout.footer-default.text"/>&nbsp;-
                         <a target="_blank" href="<%= request.getContextPath() %>/feedback"><fmt:message key="jsp.layout.footer-default.feedback"/></a>
                         <a href="<%= request.getContextPath() %>/htmlmap"></a>-->
-                        El Repositorio UTM utiliza DSpace V.6.3. Hecho en México, 2019. Universidad Tecnológica de la Mixteca. Bajo la licencia <a  href="http://creativecommons.org/licenses/by-nc-nd/4.0"target="_blank" ><img src="/jspui/image/creative.png" alt="CreativeCommons"/></a> 
+                        El Repositorio UTM utiliza DSpace V.6.3. Hecho en México, 2019. Universidad Tecnológica de la Mixteca. Bajo la licencia <a  href="http://creativecommons.org/licenses/by-nc-nd/4.0"target="_blank" ><img src="/jspui/image/creative.png" alt="CreativeCommons" height="33" width="88"/></a> 
                     </p>
                 </div>
             </div>
