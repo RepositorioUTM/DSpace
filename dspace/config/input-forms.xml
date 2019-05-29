@@ -445,64 +445,68 @@
        <stored-value></stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN ADMINISTRACIÓN DE NEGOCIOS</displayed-value>
-       <stored-value>MAESTRÍA EN ADMINISTRACIÓN DE NEGOCIOS</stored-value>
+       <displayed-value>Maestría en Administración de Negocios</displayed-value>
+       <stored-value>Maestría en Administración de Negocios</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN MEDIOS INTERACTIVOS</displayed-value>
-       <stored-value>MAESTRÍA EN MEDIOS INTERACTIVOS</stored-value>
+       <displayed-value>Maestría en Medios Interactivos</displayed-value>
+       <stored-value>Maestría en Medios Interactivos</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN SISTEMAS DISTRIBUIDOS</displayed-value>
-       <stored-value>MAESTRÍA EN SISTEMAS DISTRIBUIDOS</stored-value>
+       <displayed-value>Maestría en Sistemas Distribuidos</displayed-value>
+       <stored-value>Maestría en Sistemas Distribuidos</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN ELECTRÓNICA, OPCIÓN: SISTEMAS INTELIGENTES APLICADOS</displayed-value>
-       <stored-value>MAESTRÍA EN ELECTRÓNICA, OPCIÓN: SISTEMAS INTELIGENTES APLICADOS</stored-value>
+       <displayed-value>Maestría en Electrónica, opción: Sistemas Inteligentes Aplicados</displayed-value>
+       <stored-value>Maestría en Electrónica, opción: Sistemas Inteligentes Aplicados</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN TECNOLOGÍAS DE CÓMPUTO APLICADO</displayed-value>
-       <stored-value>MAESTRÍA EN TECNOLOGÍAS DE CÓMPUTO APLICADO</stored-value>
+       <displayed-value>Maestría en Tecnologías de Cómputo Aplicado</displayed-value>
+       <stored-value>Maestría en Tecnologías de Cómputo Aplicado</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN TECNOLOGÍA AVANZADA DE MANUFACTURA</displayed-value>
-       <stored-value>MAESTRÍA EN TECNOLOGÍA AVANZADA DE MANUFACTURA</stored-value>
+       <displayed-value>Maestría en Tecnología Avanzada de Manufactura</displayed-value>
+       <stored-value>Maestría en Tecnología Avanzada de Manufactura</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN CIENCIAS: PRODUCTOS NATURALES Y ALIMENTOS</displayed-value>
-       <stored-value>MAESTRÍA EN CIENCIAS: PRODUCTOS NATURALES Y ALIMENTOS</stored-value>
+       <displayed-value>Maestría en Ciencias: Productos Naturales y Alimentos</displayed-value>
+       <stored-value>Maestría en Ciencias: Productos Naturales y Alimentos</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN DISEÑO DE MODAS</displayed-value>
-       <stored-value>MAESTRÍA EN DISEÑO DE MODAS</stored-value>
+       <displayed-value>Maestría en Diseño de Modas</displayed-value>
+       <stored-value>Maestría en Diseño de Modas</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN DISEÑO DE MUEBLES</displayed-value>
-       <stored-value>MAESTRÍA EN DISEÑO DE MUEBLES</stored-value>
+       <displayed-value>Maestría en Diseño de Muebles</displayed-value>
+       <stored-value>Maestría en Diseño de Muebles</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN MODELACIÓN MATEMÁTICA</displayed-value>
-       <stored-value>MAESTRÍA EN MODELACIÓN MATEMÁTICA</stored-value>
+       <displayed-value>Maestría en Modelación Matemática</displayed-value>
+       <stored-value>Maestría en Modelación Matemática</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN ROBÓTICA</displayed-value>
-       <stored-value>MAESTRÍA EN ROBÓTICA</stored-value>
+       <displayed-value>Maestría en Robótica</displayed-value>
+       <stored-value>Maestría en Robótica</stored-value>
      </pair>
      <pair>
-       <displayed-value>MAESTRÍA EN CIENCIAS DE MATERIALES</displayed-value>
-       <stored-value>MAESTRÍA EN CIENCIAS DE MATERIALES</stored-value>
+       <displayed-value>Maestría en Ciencias de Materiales</displayed-value>
+       <stored-value>Maestría en Ciencias de Materiales</stored-value>
      </pair>
      <pair>
-       <displayed-value>DOCTORADO EN TECNOLOGÍAS DE CÓMPUTO APLICADO</displayed-value>
-       <stored-value>DOCTORADO EN TECNOLOGÍAS DE CÓMPUTO APLICADO</stored-value>
+       <displayed-value>Doctorado en Tecnologías de Cómputo Aplicado</displayed-value>
+       <stored-value>Doctorado en Tecnologías de Cómputo Aplicado</stored-value>
      </pair>
      <pair>
-       <displayed-value>DOCTORADO EN ELECTRÓNICA, ESPECIALIDAD: SISTEMAS INTELIGENTES APLICADOS</displayed-value>
-       <stored-value>DOCTORADO EN ELECTRÓNICA, ESPECIALIDAD: SISTEMAS INTELIGENTES APLICADOS</stored-value>
+       <displayed-value>Doctorado en Electrónica, especialidad: Sistemas Inteligentes Aplicados</displayed-value>
+       <stored-value>Doctorado en Electrónica, especialidad: Sistemas Inteligentes Aplicados</stored-value>
      </pair>
      <pair>
-       <displayed-value>DOCTORADO EN MODELACIÓN MATEMÁTICA</displayed-value>
-       <stored-value>DOCTORADO EN MODELACIÓN MATEMÁTICA</stored-value>
+       <displayed-value>Doctorado en Modelación Matemática</displayed-value>
+       <stored-value>Doctorado en Modelación Matemática</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Doctorado en Robótica</displayed-value>
+       <stored-value>Doctorado en Robótica</stored-value>
      </pair>
    </value-pairs>
 	
@@ -622,23 +626,23 @@
 
    <value-pairs value-pairs-name="document_state" dc-term="type">
      <pair>
-       <displayed-value>borrador</displayed-value>
+       <displayed-value>Borrador</displayed-value>
        <stored-value>draft</stored-value>
      </pair>
      <pair>
-       <displayed-value>versión enviada</displayed-value>
+       <displayed-value>Versión Enviada</displayed-value>
        <stored-value>submittedVersion</stored-value>
       </pair>
      <pair>
-       <displayed-value>versión aceptada</displayed-value>
+       <displayed-value>Versión Aceptada</displayed-value>
        <stored-value>acceptedVersion</stored-value>
      </pair>
      <pair>
-       <displayed-value>versión publicada</displayed-value>
+       <displayed-value>Versión Publicada</displayed-value>
        <stored-value>publishedVersion</stored-value>
      </pair>
      <pair>
-       <displayed-value>versión actualizada</displayed-value>
+       <displayed-value>Versión Actualizada</displayed-value>
        <stored-value>updatedVersion</stored-value>
      </pair>
    </value-pairs>
