@@ -232,7 +232,6 @@
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>type</dc-element>
-         <dc-qualifier>document</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Tipo del recurso</label>
          <input-type value-pairs-name="document_types">dropdown</input-type>
@@ -547,7 +546,7 @@
      </pair>
      <pair>
        <displayed-value>Tesis de Maestría</displayed-value>
-       <stored-value>masterThesis</stored-value>
+       <stored-value>Tesis de Maestría</stored-value>
      </pair>
      <pair>
        <displayed-value>Tesis de Doctorado</displayed-value>
