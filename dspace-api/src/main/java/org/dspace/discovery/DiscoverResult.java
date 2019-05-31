@@ -149,6 +149,15 @@ public class DiscoverResult {
         {
             return authorityKey != null?"authority":"equals";
         }
+	public boolean revisa(){
+	   char c= displayedValue.charAt(0);
+	   int l= displayedValue.length();
+	   char d= displayedValue.charAt(l-1);
+	   if (Character.isDigit(c)== true || Character.isDigit(d)== true)
+		return false;
+	   else
+		return true;
+	}
     }
 
     public String getSpellCheckQuery() {

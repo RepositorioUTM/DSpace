@@ -105,7 +105,7 @@
 			    {
 				    for (FacetResult fvalue : facet)
 				    { 
-				        if (idx != limit)
+				        if (idx != limit && fvalue.revisa())
 				        {
 				        %><li class="list-group-item"><span class="badge"><%= fvalue.getCount() %></span> <a href="<%= request.getContextPath()
 				            + searchScope
