@@ -192,6 +192,11 @@
     <servlet-class>org.dspace.app.webui.servlet.CommunityListServlet</servlet-class>
   </servlet>
 
+    <servlet>
+    <servlet-name>video-list</servlet-name>
+    <servlet-class>org.dspace.app.webui.servlet.VideoListServlet</servlet-class>
+  </servlet>
+
   <servlet>
     <servlet-name>edit-communities</servlet-name>
     <servlet-class>org.dspace.app.webui.servlet.admin.EditCommunitiesServlet</servlet-class>
@@ -524,6 +529,11 @@
   <servlet-mapping>
     <servlet-name>community-list</servlet-name>
     <url-pattern>/community-list</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>video-list</servlet-name>
+    <url-pattern>/video-list</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
