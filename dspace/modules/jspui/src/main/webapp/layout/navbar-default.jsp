@@ -188,7 +188,7 @@
                 <li>
                 </li> 
                 <li><a href="Files/ManualdeUsuario.pdf" download="manual RI UTM"><fmt:message key="jsp.layout.navbar-default.manualRI"/></a></li><!--Manual de uso del RI-->
-                <li><a href="#"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
+                <li><a href="<%= request.getContextPath() %>/video-list"><fmt:message key="jsp.layout.navbar-default.videoTutorial"/></a></li> <!--Video-tutoriales-->
                 <li>  <% if (sessionLocale.getLanguage().equals(new Locale("es").getLanguage())) { %>
                   <a href="Files/CREATIVE_COMMONS_ESP_V3.pdf" download="Licencia creative commons.pdf"><fmt:message key="jsp.layout.navbar-default.LicenseCC"/></a>
                   <% } else { %>
