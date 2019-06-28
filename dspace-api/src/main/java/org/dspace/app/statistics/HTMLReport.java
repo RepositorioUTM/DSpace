@@ -92,6 +92,7 @@ public class HTMLReport implements Report
             frag.append(blockExplanation(stats.getExplanation()));
             frag.append(floorInfo(stats.getFloor()));
             frag.append(statBlock(stats));
+            frag.append(statGraph(stats));
         }
         
         // output the footer and return
@@ -139,7 +140,7 @@ public class HTMLReport implements Report
         StringBuffer frag = new StringBuffer();
         
         frag.append("<div class=\"reportNavigation\">");
-        frag.append("<a href=\"#general_overview\">General Overview</a>");
+        frag.append("<a href=\"#general_overview\">General Overviewwwwwwwwwwwwwwwwww</a>");
         frag.append("&nbsp;|&nbsp;");
         frag.append("<a href=\"#archive_information\">Archive Information</a>");
         frag.append("&nbsp;|&nbsp;");
@@ -420,6 +421,83 @@ public class HTMLReport implements Report
         return frag.toString();
     }
     
+
+    public String statGraph(Statistics content)
+    {
+        StringBuffer frag = new StringBuffer();
+        Stat[] stats = content.getStats();
+        
+        // start the table
+        frag.append("<table align=\"center\" class=\"reportBlock\" cellpadding=\"5\">\n");
+        
+        // prepare the table headers
+        if (content.getStatName() != null || content.getResultName() != null)
+        {
+            frag.append("\t<tr>\n");
+            frag.append("\t\t<th>\n");
+            if (content.getStatName() != null)
+            {
+                frag.append("\t\t\t" + content.getStatName() + "\n");
+            }
+            else
+            {
+                frag.append("\t\t\t&nbsp;\n");
+            }
+            frag.append("\t\t</th>\n");
+            frag.append("\t\t<th>\n");
+            if (content.getResultName() != null)
+            {
+                frag.append("\t\t\t" + content.getResultName()  + "pruebba" + "\n");
+            }
+            else
+            {
+                frag.append("\t\t\t&nbsp;\n");
+            }
+            frag.append("\t\t</th>\n");
+            frag.append("\t</tr>\n");
+        }
+        
+        // output the statistics in the table
+        for (int i = 0; i < stats.length; i++)
+        {
+            String style = null;
+ 
+            if ((i & 1) == 1)
+            {
+                style = "reportOddRow";
+            }
+            else
+            {
+                style = "reportEvenRow";
+            }
+            
+            frag.append("\t<tr class=\"" + style + "\">\n\t\t<td>\n");
+            frag.append("\t\t\t");
+            if (stats[i].getReference() != null)
+            {
+                frag.append("<a href=\"" + stats[i].getReference() + "\" ");
+                frag.append("target=\"_blank\">");
+            }
+            frag.append(this.clean(stats[i].getKey()));
+            if (stats[i].getReference() != null)
+            {
+                frag.append("</a>");
+            }
+            frag.append("\n");
+            frag.append("\t\t</td>\n\t\t<td class=\"rightAlign\">\n");
+            frag.append("\t\t\t").append(ReportTools.numberFormat(stats[i].getValue()));
+            if (stats[i].getUnits() != null)
+            {
+                frag.append(" ").append(stats[i].getUnits());
+            }
+            frag.append("\n");
+            frag.append("\t\t</td>\n\t</tr>\n");
+        }
+        
+        frag.append("</table>\n");
+        
+        return frag.toString();
+    }
     
     /**
      * output the floor information in HTML format
