@@ -148,7 +148,7 @@
          <repeatable>false</repeatable>
          <label>Autor principal</label>
          <input-type>name</input-type>
-         <hint>Autor principal del recurso, en minúsculas y con acento</hint>
+         <hint>Autor principal del recurso, en minúsculas y con acento. En caso de haber más autores se agregan</hint>
          <required></required>
        </field>
 
@@ -397,6 +397,10 @@
        <stored-value>Instituto de Posgrado</stored-value>
      </pair>
      <pair>
+       <displayed-value>Instituto de Computación</displayed-value>
+       <stored-value>Instituto de Computación</stored-value>
+     </pair>
+     <pair>
        <displayed-value>Instituto de Diseño</displayed-value>
        <stored-value>Instituto de Diseño</stored-value>
      </pair>
@@ -496,8 +500,8 @@
        <stored-value>Doctorado en Tecnologías de Cómputo Aplicado</stored-value>
      </pair>
      <pair>
-       <displayed-value>Doctorado en Electrónica, especialidad: Sistemas Inteligentes Aplicados</displayed-value>
-       <stored-value>Doctorado en Electrónica, especialidad: Sistemas Inteligentes Aplicados</stored-value>
+       <displayed-value>Doctorado en Electrónica, opción: Sistemas Inteligentes Aplicados</displayed-value>
+       <stored-value>Doctorado en Electrónica, opción: Sistemas Inteligentes Aplicados</stored-value>
      </pair>
      <pair>
        <displayed-value>Doctorado en Modelación Matemática</displayed-value>
@@ -555,6 +559,10 @@
      <pair>
        <displayed-value>Libros</displayed-value>
        <stored-value>book</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Capítulo de Libro</displayed-value>
+       <stored-value>bookPart</stored-value>
      </pair>
      <pair>
        <displayed-value>Revista TEMAS</displayed-value>
